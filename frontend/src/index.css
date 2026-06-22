@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: Inter, ui-sans-serif, system-ui;
+    background: #f7f3e8;
+    color: #17211b;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+    background: #101612;
+    color: #edf3ee;
+  }
+
+  body {
+    @apply min-w-[320px] bg-parchment text-ink antialiased transition-colors dark:bg-[#101612] dark:text-stone-100;
+  }
+
+  ::selection {
+    @apply bg-moss-600 text-white;
+  }
+}
+
+@layer components {
+  .field {
+    @apply w-full rounded-xl border border-stone-300 bg-white/80 px-4 py-3 text-sm outline-none transition placeholder:text-stone-400 focus:border-moss-600 focus:ring-4 focus:ring-moss-500/10 dark:border-white/10 dark:bg-white/5 dark:focus:border-moss-500;
+  }
+
+  .label {
+    @apply mb-2 block text-sm font-semibold text-stone-700 dark:text-stone-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-moss-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-moss-600 disabled:pointer-events-none disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white/70 px-5 py-3 text-sm font-semibold text-stone-800 transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-stone-100 dark:hover:bg-white/10;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-stone-200/80 bg-white/75 shadow-book backdrop-blur dark:border-white/10 dark:bg-white/[0.04];
+  }
+}
